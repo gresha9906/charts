@@ -93,3 +93,5 @@ sudo systemctl restart containerd kubelet
 nerdctl tag busybox:1.36 <NODE_IP>:30500/test/busybox:1.36
 nerdctl push <NODE_IP>:30500/test/busybox:1.36
 nerdctl pull <NODE_IP>:30500/test/busybox:1.36
+
+kubectl -n cattle-system create secret tls tls-rancher --cert=server.crt --key=server.key
