@@ -1,3 +1,7 @@
+kubectl get svc -n cattle-system
+kubectl expose deployment rancher --name=rancher-lb --port=443 --type=LoadBalancer -n cattle-system
+kubectl get svc -n cattle-system
+
 [Service]
 Environment="CONTAINERD_LOG_LEVEL=debug"
 # 1) Поды с метками релиза (если были)
