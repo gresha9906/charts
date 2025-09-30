@@ -1,3 +1,5 @@
+[Service]
+Environment="CONTAINERD_LOG_LEVEL=debug"
 # 1) Поды с метками релиза (если были)
 kubectl -n <ns> get pods -l app.kubernetes.io/instance=<release> -o wide --show-labels
 
