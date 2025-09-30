@@ -1,3 +1,5 @@
+--set controller.service.type=NodePort --set controller.service.nodePorts.http=30080 --set controller.service.nodePorts.https=30443
+
 kubectl get svc -n cattle-system
 kubectl expose deployment rancher --name=rancher-lb --port=443 --type=LoadBalancer -n cattle-system
 kubectl get svc -n cattle-system
