@@ -1,3 +1,5 @@
+kubectl -n cattle-system patch settings.management.cattle.io server-url --type=merge -p '{"value":"https://mos-s-madptst09:30443"}'
+
 --set controller.service.type=NodePort --set controller.service.nodePorts.http=30080 --set controller.service.nodePorts.https=30443
 
 kubectl get svc -n cattle-system
