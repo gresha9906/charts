@@ -1,3 +1,17 @@
+# 1) Поды с метками релиза (если были)
+kubectl -n <ns> get pods -l app.kubernetes.io/instance=<release> -o wide --show-labels
+
+# 2) Узнать владельца конкретного пода
+kubectl -n <ns> describe pod <pod-name> | sed -n '/Owner References/,$p'
+
+# 3) Посмотреть, что создавали хуки Helm
+helm get hooks <release> -n <ns> | less
+
+# 4) Посмотреть все манифесты релиза (что именно должно было удалиться)
+helm get manifest <release> -n <ns> | less
+
+
+
 helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx \
   -n ingress-nginx --create-namespace \
   --set controller.image.repository=repo.polyus.com/k8s/ingress-nginx/controller \
