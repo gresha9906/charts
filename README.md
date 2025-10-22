@@ -1,3 +1,10 @@
+
+ldapsearch -x \
+  -H ldap://MOS-S-DC01.polyus.com \
+  -D "POLYUS\\aster" \
+  -W \
+  -b "OU=Users,OU=PolyusDigital,OU=Krasnoyarsk,OU=Root,DC=polyus,DC=com" \
+  "(objectClass=user)"
 https://learn.microsoft.com/en-us/sysinternals/downloads/adexplorer
 kubectl -n cattle-system patch settings.management.cattle.io server-url --type=merge -p '{"value":"https://mos-s-madptst09:30443"}'
 
