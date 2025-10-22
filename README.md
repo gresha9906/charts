@@ -1,4 +1,4 @@
-
+openssl s_client -showcerts -connect mydc.mycompany.com:636 -servername mydc.mycompany.com </d ev/null 2>/dev/null > my_ldaps_cert.pem
 ldapsearch -x \
   -H ldap://MOS-S-DC01.polyus.com \
   -D "POLYUS\\aster" \
